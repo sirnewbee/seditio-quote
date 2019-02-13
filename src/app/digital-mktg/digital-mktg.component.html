@@ -1,0 +1,37 @@
+<div class="dm-content row">
+  <div class="dm-form-container row">
+    <div class="dm-label-size col 6">
+      <label>
+        <input type="checkbox" [(ngModel)]="choices.online_ad" (change)="onChange()" />
+        <span>Online Advertising</span>
+      </label>
+      <section *ngIf="choices.online_ad">
+          <p *ngFor="let online_ad of online_ads">
+            <input type="number" style="width:10%" [(ngModel)]="online_ad.pages" min="0" (change)="onChange()" />
+            <span>
+              <label class="dm-label-size">{{online_ad.name}}</label>
+              <h6>Price: {{cons.unit}}{{online_ad.total}} </h6> 
+            </span>
+          </p>
+        </section>
+    </div>
+    <div class="dm-label-size col 6">
+      <label>
+        <input type="checkbox" [(ngModel)]="choices.conversion_optimization" (change)="onChange()" />
+        <span>Conversion Optimization</span>
+      </label>
+      <section *ngIf="choices.conversion_optimization">
+          <p *ngFor="let conversion_optimization of conversion_optimizations">
+            <input type="number" style="width:10%" [(ngModel)]="conversion_optimization.pages" min="0" (change)="onChange()" />
+            <span>
+              <label class="dm-label-size">{{conversion_optimization.name}}</label>
+              <h6>Price: {{cons.unit}} {{conversion_optimization.total}} </h6>
+            </span>
+          </p>
+        </section>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="service-title col s12"><h5>Total: {{cons.unit}} {{total}}</h5></div>
+</div>

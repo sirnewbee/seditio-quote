@@ -1,0 +1,23 @@
+<div class="col s3" routerLink="">
+    <img src="/assets/seditiologo.png" class="ui-logo">
+</div>
+
+<div class="user-info-content">
+  <div class="row">
+      <h4 class="col s12">We would like to hear from you...</h4>
+  </div>
+  <div class="row">
+    <input type="text" [(ngModel)]="userInfo.name" class="col s6" placeholder="Name" requried>
+  </div>
+  <div class="row">
+    <input type="text" [(ngModel)]="userInfo.company" class="col s12" placeholder="Company">
+  </div>
+  <div class="row">
+    <input type="email" [(ngModel)]="userInfo.email" class="col s12" placeholder="email">
+  </div>
+  <div class="row">
+    <textarea class="comment-box col s12" [(ngModel)]="userInfo.textField" placeholder="Comments and suggestions..."></textarea>
+  </div>
+  <button class="ui-button btn waves-effect waves-light" type="submit" routerLink="">Back<i class="material-icons left">backspace</i></button>
+  <button class="ui-button btn waves-effect waves-light" type="submit" routerLink="/data" (click)="submitForm()">Submit<i class="material-icons right">send</i></button>
+</div>

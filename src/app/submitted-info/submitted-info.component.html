@@ -1,0 +1,155 @@
+<div class="quote-nav row">
+    <div class="quote-nav-item col s3">
+        <button class="print-button btn waves-effect waves-light" (click)="saveDiv()">Save</button>
+    </div>
+    <div class="quote-nav-item col s3">
+        <button class="print-button btn waves-effect waves-light" (click)="printDiv('printableArea')">Print</button>
+    </div>
+</div>
+<div id="printableArea" #content>
+    <div class="col s3" routerLink="">
+        <img src="/assets/seditiologo.png" class="ui-logo">
+    </div>
+
+    <div *ngIf="choices[0].status" class="inner-content row">
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th><h4>Web Development</h4></th>
+                </tr>
+                <tr>
+                    <th>Service</th>
+                    <th>Pages</th>
+                    <th>Sub-total</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let wd of webDev.pages">
+                  <td>{{wd.name}}</td>
+                  <td>{{wd.pages}}</td>
+                  <td>{{cons.unit}}{{wd.total}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Total:</td>
+                    <td>{{cons.unit}}{{webDev.total}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="choices[1].status" class="inner-content row">
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th><h4>Digital Marketing</h4></th>
+                </tr>
+                <tr>
+                    <th>Service</th>
+                    <th>Pages</th>
+                    <th>Sub-total</th>
+                </tr>
+            </thead>
+
+            <tbody *ngIf="digitalMktg.online_ad_opt">
+                <tr>
+                    <th><h5>Online Advertising</h5></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <tr *ngFor="let dm of digitalMktg.online_ads_data">
+                  <td>{{dm.name}}</td>
+                  <td>{{dm.pages}}</td>
+                  <td>{{cons.unit}}{{dm.total}}</td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="digitalMktg.conversion_opt">
+                <tr>
+                    <th><h5>Conversion Optimization</h5></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr *ngFor="let dm of digitalMktg.conversion_optimizations_data">
+                    <td>{{dm.name}}</td>
+                    <td>{{dm.pages}}</td>
+                    <td>{{cons.unit}}{{dm.total}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Total:</td>
+                    <td>{{cons.unit}}{{digitalMktg.total}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="choices[2].status" class="inner-content row">
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th style="width: 68%"><h4>Hosting</h4></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>Service</th>
+                    <th>Pages</th>
+                    <th>Sub-total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let host of hosting.data">
+                    <td>{{host.name}}</td>
+                    <td>{{host.pages}}</td>
+                    <td>{{cons.unit}}{{host.total}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>Total:</td>
+                    <td>{{cons.unit}}{{hosting.total}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div *ngIf="choices[3].status" class="inner-content row">
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th><h4>Training</h4></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th><h5>Number of Attendees   :   {{training.attendees}}</h5></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>Service</th>
+                    <th>Duration</th>
+                    <th>Sub-total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tr of training.trainings">
+                    <td>{{tr.name}}</td>
+                    <td>{{tr.duration * 60}} mins</td>
+                    <td>{{cons.unit}}{{tr.total}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Total:</td>
+                    <td>{{cons.unit}}{{training.total}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <table class="total-content highlight">
+        <th></th>
+        <th><h5>Total:</h5></th>
+        <th><h5>{{cons.unit}}{{quoteTotal}}</h5></th>
+    </table> -->
+</div>

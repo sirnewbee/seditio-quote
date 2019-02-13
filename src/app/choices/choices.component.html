@@ -1,0 +1,38 @@
+<div class="choice-nav row">
+    <div class="logo col s3" (click)="clearLocalStorage()" href="">
+        <img src="/assets/seditiologo.png" class="logo">
+    </div>
+    <span *ngFor="let choice of choices">
+        <div class="choice-nav-items col s2">
+            <label>
+                <input type="checkbox" [(ngModel)]="choice.status" (change)="updateSelections(choice.name)" />
+                <span>{{choice.name}}</span>
+            </label>
+        </div>
+    </span>
+</div>
+<div class="row">
+    <div class="service-title col s12">
+        <div class="service-tabs col s2" *ngFor="let choice of choices">
+            <button *ngIf="choice.status" [ngStyle]="{'color':choice.name === current ? 'tomato' : 'black' }" (click)="selectTab(choice.name)" class="button-tabs waves-effect waves-light btn">{{choice.name}}</button>
+        </div>
+        <!-- <div *ngIf="current != ''" class="current-tab col s2">
+            <h5>{{current}}</h5>
+        </div> -->
+        <div class="service-tabs col s2" *ngIf="checkStatuses()">
+            <button class="choice-button btn waves-effect waves-light" type="submit" routerLink="process-submition">Next<i class="material-icons right">send</i></button>
+        </div>
+    </div>
+</div>
+<div *ngIf="current === 'Web Development' && choices[0].status"> 
+    <app-web-dev></app-web-dev>
+</div>
+<div *ngIf="current === 'Digital Marketing' && choices[1].status">
+    <app-digital-mktg></app-digital-mktg>
+</div>
+<div *ngIf="current === 'Hosting' && choices[2].status">
+    <app-hosting></app-hosting>
+</div>
+<div *ngIf="current === 'Training' && choices[3].status">
+    <app-training></app-training>
+</div>

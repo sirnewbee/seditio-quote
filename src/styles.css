@@ -1,1 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "~font-awesome/css/font-awesome.css"; */
+@import "~materialize-css/dist/css/materialize.min.css";
+
+body ,html{
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+  background-image: url('/assets/quote-bg/quote-bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+label , input {
+  color: white;
+}
+
+h5{
+  text-align: center;
+}
+
+.logo-container{
+  width: 30%;
+  height: 40%;
+  padding: 0px;
+  margin-right: 0px;
+}
+
+.ui-logo{
+  margin: 2%;
+  width: 20%;
+}
+
+.t-wd-header{
+  margin-top: 1%;
+  margin-left: 25%;
+  width: 70%;
+}
+
+.t-wd-body{
+  margin-top: 1%;
+  margin-left: 25%;
+  width: 70%;
+}
+
+.label-size{
+  width: 40%;
+  color: white;
+  font-size: 1.2em;
+}
+
+.global-input{
+  width: 20%;
+  margin-right:2%;
+}
+
+.input-size{
+  width: 10%;
+}
+
+.service-title{
+  text-align: left;
+  height: 8em;
+  background-color: rgba(240,162,87,0.3);
+  font-size: 80%;
+  color: black;
+  margin: 0px;
+  position: static;
+}
+
+.service-content{
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2%;
+  margin-left: 20%;
+  width: 60%;
+}
+
+.current-tab{
+  margin: 1%;
+  font-size: 2em;
+  background-color: rgb(250, 250, 250 , 0.5);
+}
+
+.inner-content{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ui-logo{
+    margin: 2%;
+    width: 20%;
+}

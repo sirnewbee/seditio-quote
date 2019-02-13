@@ -1,0 +1,27 @@
+<div class="service-content row">
+  <div class="t-wd-header row">
+    <div class="col s6">
+      <select class="browser-default" [(ngModel)]="selected" (change)="onChange()">
+        <option>1 on 1</option>
+        <option>Corporate</option>
+      </select>
+    </div>
+  </div>
+  <div class="t-header row" *ngIf="selected === 'Corporate'">
+    <div class="col s4"><h6>Number of Attendees:</h6></div>
+    <div class="col s4"><input type="number" style="width:20%" [(ngModel)]="attendees" (change)="onChange()" min="2" placeholder="Number of Attendees"></div>
+  </div>
+  <div class="t-content row">
+    <div class="t-body row">
+      <div class="col s6"><label class="label-size">Service</label></div>
+      <div class="col s6"><label class="label-size">Price</label></div>
+    </div>
+    <div class="t-body row" *ngFor="let training of trainings">
+      <div class="col s6"><label class="t-label-size">{{training.name}}</label></div>
+      <div class="col s6"><label class="t-label-size">{{cons.unit}} {{training.total}}</label></div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="service-title col s12"><h5>Total: {{cons.unit}} {{total}}</h5></div>
+</div>

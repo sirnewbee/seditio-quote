@@ -1,0 +1,22 @@
+<div class="h-body row">
+  <table>
+    <thead>
+      <tr>
+        <th class="label-size"><label class="label-size">Number of Pages</label></th>
+        <th class="label-size"><label class="label-size">Service</label></th>
+        <th class="label-size"><label class="label-size">Price</label></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let hosting of hostings">
+        <td><input type="number" class="input-size" [(ngModel)]="hosting.pages" min="0" (change)="onChange()" placeholder="Number of Sites"></td>
+        <td><label class="label-size">{{hosting.name}}</label></td>
+        <td><label class="label-size">{{cons.unit}} {{hosting.total}}</label></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="service-title col s12"><h5>Total: {{cons.unit}} {{total}}</h5></div>
+</div>

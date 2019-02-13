@@ -1,0 +1,24 @@
+<div class="service-content row">
+  <div class="t-wd-header row">
+    <div class="col s6">
+      <label class="label-size">Website</label>
+      <select class="browser-default" (change)="onChangeService()" [(ngModel)]="selected" >
+        <option *ngFor="let web of website">{{web.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="t-wd-header row" *ngFor="let page of pages">
+    <div class="col s4">
+      <input type="number" class="input-size" [(ngModel)]="page.pages" min="0" (change)="onChangeService()" placeholder="Number of Sites">
+    </div>
+    <div class="col s4">
+      <label class="label-size">{{page.name}}</label>
+    </div>
+    <div class="col s4">
+      <label class="label-size">{{cons.unit}} {{page.total}}</label>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="service-title"><h5>Project Management {{project_management * 100}}%: {{cons.unit}}{{subTotal}}</h5><h5>Total: $ {{total}}</h5></div>
+</div>

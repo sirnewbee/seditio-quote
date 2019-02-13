@@ -1,0 +1,28 @@
+h4{
+    color: white;
+}
+
+div{
+    text-align: center;
+}
+
+.comment-box{
+    color: white;
+    height: 10em;
+    padding: 2%;
+}
+
+.user-info-content{
+    height: 30%;
+    width: 60%;
+    margin-left: 20%;
+    padding: 3%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.ui-button{
+    width: 15%;
+    font-size: 1.2em;
+    margin: 2%;
+    background-color: rgb(240,162,87);
+}
