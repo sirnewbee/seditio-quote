@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "seditio-quote"
+  },
+  "targets": {
+    "seditio-quote": {
+      "hosting": {
+        "app": [
+          "seditio-quote"
+        ]
+      }
+    }
   }
 }
