@@ -11,7 +11,7 @@
     <tbody>
       <tr *ngFor="let hosting of hostings">
         <td><input type="number" class="input-size" [(ngModel)]="hosting.pages" min="0" (change)="onChange()" placeholder="Number of Sites"></td>
-        <td><label class="label-size">{{hosting.name}}</label></td>
+        <td><label class="label-size" tooltip="{{hosting.description}}" placement="right">{{hosting.name}}</label></td>
         <td><label class="label-size">{{cons.unit}} {{hosting.total}}</label></td>
       </tr>
     </tbody>

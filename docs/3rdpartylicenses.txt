@@ -368,6 +368,9 @@ MIT
 @angular/forms
 MIT
 
+ng2-tooltip-directive
+MIT
+
 @angular/fire/firestore
 MIT
 

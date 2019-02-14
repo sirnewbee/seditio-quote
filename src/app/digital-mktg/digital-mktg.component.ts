@@ -13,6 +13,7 @@ export class DigitalMktgComponent implements OnInit {
   public conversion_opt;
   public total: number = 0;
   public choices;
+  public descriptions;
 
   public online_ads = [];
   public conversion_optimizations = [];
@@ -25,6 +26,7 @@ export class DigitalMktgComponent implements OnInit {
     this.choices = this._DMSerivce.choices;
     this.online_ads = this._DMSerivce.online_ads;
     this.conversion_optimizations = this._DMSerivce.conversion_optimizations;
+    this.descriptions = this._DMSerivce.dm_desc;
    }
 
   ngOnInit() {

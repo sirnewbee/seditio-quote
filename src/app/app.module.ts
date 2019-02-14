@@ -22,6 +22,8 @@ import { environment } from 'src/environments/environment';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { SubmittedInfoComponent } from './submitted-info/submitted-info.component';
 
+import {TooltipModule} from 'ng2-tooltip-directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import { SubmittedInfoComponent } from './submitted-info/submitted-info.componen
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TooltipModule
   ],
   providers: [QuotesService , WebDevelopmentService , DigitalMktgService],
   bootstrap: [AppComponent]

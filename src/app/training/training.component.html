@@ -17,7 +17,7 @@
       <div class="col s6"><label class="label-size">Price</label></div>
     </div>
     <div class="t-body row" *ngFor="let training of trainings">
-      <div class="col s6"><label class="t-label-size">{{training.name}}</label></div>
+      <div class="col s6"><label class="t-label-size" tooltip="{{training.description}}" placement="right">{{training.name}}</label></div>
       <div class="col s6"><label class="t-label-size">{{cons.unit}} {{training.total}}</label></div>
     </div>
   </div>

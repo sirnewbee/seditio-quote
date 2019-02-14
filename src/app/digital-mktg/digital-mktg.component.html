@@ -3,13 +3,13 @@
     <div class="dm-label-size col 6">
       <label>
         <input type="checkbox" [(ngModel)]="choices.online_ad" (change)="onChange()" />
-        <span>Online Advertising</span>
+        <span tooltip="{{descriptions.online_ad_desc}}" placement="right">Online Advertising</span>
       </label>
       <section *ngIf="choices.online_ad">
           <p *ngFor="let online_ad of online_ads">
             <input type="number" style="width:10%" [(ngModel)]="online_ad.pages" min="0" (change)="onChange()" />
             <span>
-              <label class="dm-label-size">{{online_ad.name}}</label>
+              <label class="dm-label-size" tooltip="{{online_ad.description}}" placement="right">{{online_ad.name}}</label>
               <h6>Price: {{cons.unit}}{{online_ad.total}} </h6> 
             </span>
           </p>
@@ -18,13 +18,13 @@
     <div class="dm-label-size col 6">
       <label>
         <input type="checkbox" [(ngModel)]="choices.conversion_optimization" (change)="onChange()" />
-        <span>Conversion Optimization</span>
+        <span tooltip="{{descriptions.conversion_optimization_desc}}" placement="right">Conversion Optimization</span>
       </label>
       <section *ngIf="choices.conversion_optimization">
           <p *ngFor="let conversion_optimization of conversion_optimizations">
             <input type="number" style="width:10%" [(ngModel)]="conversion_optimization.pages" min="0" (change)="onChange()" />
             <span>
-              <label class="dm-label-size">{{conversion_optimization.name}}</label>
+              <label class="dm-label-size" tooltip="{{conversion_optimization.description}}" placement="right">{{conversion_optimization.name}}</label>
               <h6>Price: {{cons.unit}} {{conversion_optimization.total}} </h6>
             </span>
           </p>

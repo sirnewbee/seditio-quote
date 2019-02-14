@@ -12,7 +12,7 @@
       <input type="number" class="input-size" [(ngModel)]="page.pages" min="0" (change)="onChangeService()" placeholder="Number of Sites">
     </div>
     <div class="col s4">
-      <label class="label-size">{{page.name}}</label>
+      <label class="label-size" tooltip="{{page.description}}" placement="right">{{page.name}}</label>
     </div>
     <div class="col s4">
       <label class="label-size">{{cons.unit}} {{page.total}}</label>
